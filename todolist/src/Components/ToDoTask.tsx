@@ -3,12 +3,20 @@ import { ITask } from "../Interfaces"
 
 interface Props {
     task :ITask
+    completeTask(taskNameToDelete: string) : void
 }
 
-const TodoTask = ({task} :Props) => {
+const TodoTask = ({task,completeTask} :Props) => {
     return (
-        <div>{task.taskName}</div>
+        <div className="task">
+            <div className="content"></div>
+            <span>{task.taskName}</span>
+            <span>{task.deadline}</span>
+            <button onClick={()=>{
+                completeTask(task.taskName)
+            }}>X</button>
+        </div>
     )
 
 }
-export default TodoTask
+export default TodoTask;
