@@ -1,6 +1,7 @@
 import React, {FC,useState,ChangeEvent} from 'react';
 import "./App.css"
-import {ITask} from "./interfaces"
+import {ITask} from "./Interfaces"
+import TodoTask from './Components/ToDoTask';
 
 const App : FC = () =>{
   const [task, setTask]=useState<string>("")
@@ -22,7 +23,12 @@ const App : FC = () =>{
     //to clear out everything on the list
     setTask("")
     setDeadline(0)
+  }
 
+  const completeTask = (taskNameToDelete: string):void => {
+  setTodoList(todoList.filter((task) => {
+      return task.taskName !== taskNameToDelete
+  }))
   }
 
   return (
@@ -46,7 +52,8 @@ const App : FC = () =>{
         </div>
         <button onClick={addTask} >Add Task</button>
       </div>
-      <div className="todolist"></div>
+      <div className="todolist">
+        {todoList.map((task:ITask,key:number)=>{return <TodoTask key={key} task={task} completeTask={completeTask}/>})}</div>
     </div>
   );
 }
