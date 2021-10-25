@@ -1,7 +1,6 @@
 import React, {FC,useState,ChangeEvent} from 'react';
 import "./App.css"
 import {ITask} from "./Interfaces"
-import ToDoTask from "./Components/ToDoTask"
 import TodoTask from './Components/ToDoTask';
 
 const App : FC = () =>{
