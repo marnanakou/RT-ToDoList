@@ -12,11 +12,6 @@ body {
   padding: 0%;
 }
 
-.header .inputContainer {
-  display: flex;
-  flex-direction: column;
-}
-
 .header {
   flex: 30%;
   width: 100%;
@@ -65,7 +60,6 @@ body {
   width: 500px;
   height: 50px;
   display: flex;
-  color: white;
   margin: 15px;
 }
 
@@ -85,7 +79,9 @@ body {
   border: 1px solid white;
   font-size: 1px;
   border-right: none;
+  color: #ffffff;
   background-color: tomato;
+  font-size: 18px;
 }
 
 .task button {
